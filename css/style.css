@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+menu,
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+img{
+    max-width: 100%;
+}
+
+.flex-container{
+    /* display: flex; */
+    /* flex-direction: row; */
+    height: 100vh;
+}
+
+.vertical-split{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* SIDEBAR SECTION */
+.sidebar-container{
+    display: flex;
+}
+
+.sidebar__content{
+    width: 200px;
+    height: calc(100vh - 90px);
+    border: 2px solid red;
+    background-color: red;
+}
+
+
+
+
+/* MAIN SECTION */
+
+.main-container{
+    flex-grow: 1;
+    border: 2px solid green;
+    background-color: green;
+}
+
+
+/* PLAYER SECTION */
+
+.player{
+    height: 90px;
+    width: 100%;
+    border: 2px solid blue;
+    background-color: blue;
+}
