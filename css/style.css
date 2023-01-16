@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+
+
 :root{
     --dark-blue: #141922;
 	--dark-gray: #282828;
@@ -10,6 +14,7 @@
 
 html{
     color: white;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 *{
@@ -35,6 +40,10 @@ img{
     max-height: 100%;
 }
 
+hr{
+    border: 0.5px solid gray;
+}
+
 .flex-container{
     /* display: flex; */
     /* flex-direction: row; */
@@ -54,12 +63,131 @@ img{
     overflow: hidden;
 }
 
-/* SIDEBAR SECTION */
-.sidebar{
 
+/* SIDEBAR SECTION */
+
+.sidebar{
     /* border: 5px solid red; */
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 12px 5px;
+    gap: 10px;
+    color: gray;
+    font-size: 12px;
 }
+
+.sidebar__widget {
+	/* padding: 10px; */
+	/* border: 2px solid orange; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin: 15px 0 15px; 
+}
+
+.sidebar__menu__home{
+    margin-left: -12px;
+    padding-left: 10px;
+    border-left: 2px solid #ADFF2F;
+    color: white;
+}
+
+.sidebar__menu__home,
+.sidebar__menu__search,
+.sidebar__menu__library {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar__widget.logo img{
+    height: 34px;
+}
+
+.sidebar__widget.sidebar__menu img{
+    height: 22px;
+}
+
+.sidebar__widget.app-install {
+	margin-top: auto;
+}
+
+.playlist h1{
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+.list-playlist{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: gray;
+}
+
+.add-playlist{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px; 
+    color: white;
+}
+
+.add-playlist i{
+    font-size: 37px;
+}
+
+.app-install{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    margin: 3px 0;
+}
+
+/* .app-install::after{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: gray;
+} */
+
+.app-install h1{
+    font-size: 12px;
+}
+
+.app-install img{
+    height: 25px;
+}
+
+/* .user-profile::before{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: gray;
+} */
+
+.user-profile{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    color: white;
+    font-size: 8px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.user-profile img{
+    background-color: gray;
+    height: 25px;
+    border-radius: 999px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
 
 .horizontal--split>.sidebar{
     width: var(--sidabar-width);
@@ -68,11 +196,34 @@ img{
     /* height: calc(100vh - 90px); */
 }
 
+
+
+
+
                     /* MEDIAQUERY SIDEBAR */
 
                     @media screen and (max-width: 553px){
                         .horizontal--split>.sidebar{
                             width: 40px;
+                        }
+
+                        .sidebar{
+                            padding: 5px 6px 5px;
+                            
+                        }
+
+                        .sidebar__widget span,
+                        h1{
+                            display: none;
+                        }
+
+                        .sidebar__menu__home {
+                            margin-left: -6px;
+                            padding-left: 3px;
+                        }
+
+                        .playlist{
+                            display: none;
                         }
                     }
 
@@ -88,8 +239,25 @@ img{
     flex-grow: 1;
     overflow-y: auto;
     background-color: #141922;
-
 }
+
+.main__header{
+    background-color: #080B12;
+    opacity: 0.7;
+    height: 90px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.main__header a{
+    border: 2px solid white;
+    border-radius: 999px;
+    padding: 8px 32px;
+    font-size: 10px;
+}
+
 
 
 /* PLAYER SECTION */
@@ -128,13 +296,24 @@ img{
 .song__desc{
     display: flex;
     margin-right: 1px;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+    flex-shrink: 0;
+
     
 }
 
 .song__desc>img{
     /* scale: 0.2; */
+    /* padding: 10px; */
     display: flex;
-    padding: 10px;
+    height: 42px;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	object-position: center;
+    justify-content: center;
+    margin-right: 3px;
 }
 
 .song__info{
@@ -148,6 +327,7 @@ img{
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .player-wrapper{
@@ -184,7 +364,7 @@ img{
     flex-basis: var(--sidabar-width);
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
 }
 
 .player__progress{
